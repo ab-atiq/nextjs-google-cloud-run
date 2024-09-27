@@ -53,7 +53,7 @@ RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
 # Copy the public directory from the "builder" stage to the current stage
-COPY --from=builder /app/public ./public
+# COPY --from=builder /app/public ./public
 
 # Copy the .next directory from the "builder" stage and set ownership to nextjs:nodejs
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
